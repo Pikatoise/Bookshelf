@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BooksFragment"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_title_ongoing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Читаю:"
+        android:textSize="28sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_books_ongoing"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        tools:listitem="@layout/item_recycler_book"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_ongoing"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:itemCount="3"/>
+
+    <TextView
+        android:id="@+id/tv_title_future"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="В планах:"
+        android:textSize="28sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_books_ongoing"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_books_future"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        tools:listitem="@layout/item_recycler_book"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_future"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:itemCount="3"/>
+
+    <TextView
+        android:id="@+id/tv_title_already"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Прочитано:"
+        android:textSize="28sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_books_future"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_books_already"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        tools:listitem="@layout/item_recycler_book"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_already"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:itemCount="3"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_add_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rounded_stroke"
+        android:paddingVertical="10dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавить книгу"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_empty_ongoing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Пусто..."
+        android:textSize="32sp"
+        android:layout_marginTop="50dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_ongoing"/>
+
+    <TextView
+        android:id="@+id/tv_empty_future"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Пусто..."
+        android:textSize="32sp"
+        android:layout_marginTop="50dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_future"/>
+
+    <TextView
+        android:id="@+id/tv_empty_already"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Пусто..."
+        android:textSize="32sp"
+        android:layout_marginTop="50dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_already"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
